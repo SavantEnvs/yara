@@ -1,0 +1,9 @@
+project: savantenvs/yara
+target: filemap_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/filemap_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/filemap_fuzzer
+    libfuzzer: true
+    timeout: 5

@@ -1,0 +1,10 @@
+project: savantenvs/yara
+target: rules_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/rules_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/rules_fuzzer
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/rules_fuzzer/rules_fuzzer.dict
